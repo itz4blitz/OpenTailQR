@@ -1,19 +1,20 @@
 # OpenTailQR
 
-`OpenTailQR` prints QR codes for Tailscale-hosted developer tools so you can jump from desktop to phone without typing long tailnet URLs.
+`OpenTailQR` prints QR codes for self-hosted tools on your tailnet so setting up a new phone, tablet, or laptop is a quick scan instead of manual typing.
+
+It is intentionally a small setup-time tool, not something you need every day after a device is already saved.
 
 It supports two main workflows:
 
 - direct links to OpenCode Manager or any other Tailscale URL
-- one-time bridge links for OpenCode web/TUI actions before redirect
-
-`opencode-qr` is kept as a backwards-compatible CLI alias.
+- optional one-time bridge links for OpenCode web/TUI actions before redirect
 
 ## Why this exists
 
-- No manual typing of Tailscale hostnames on mobile
-- One command on desktop, one scan on phone
-- Optional one-time link with expiration for safer OpenCode actions
+- You only need to save the URL once per device, but the annoying moment is onboarding a new device
+- A QR is faster than typing a MagicDNS hostname on mobile
+- It is useful when you replace a phone, add a tablet, or want quick temporary access on another device
+- Advanced OpenCode bridge mode is there when you want a QR to trigger an action before redirect
 
 ## Install
 
@@ -23,10 +24,7 @@ npm install
 npm link
 ```
 
-Now these commands are available globally:
-
-- `opentailqr`
-- `opencode-qr`
+Now `opentailqr` is available globally.
 
 ## Quick start
 
@@ -47,7 +45,7 @@ opentailqr --manager --manager-path /settings
 ### Any direct Tailscale URL
 
 ```bash
-opentailqr --target-url https://blitzs-mac-studio.taild1bbf.ts.net
+opentailqr --target-url https://your-machine.your-tailnet.ts.net
 ```
 
 ### OpenCode web server
@@ -77,7 +75,7 @@ opentailqr --target-path /doc
 Set an explicit host:
 
 ```bash
-opentailqr --host blitzs-mac-studio.taild1bbf.ts.net
+opentailqr --host your-machine.your-tailnet.ts.net
 ```
 
 Use one-time bridge mode and run a TUI command before redirect:

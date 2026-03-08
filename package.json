@@ -1,7 +1,7 @@
 {
   "name": "opentailqr",
   "version": "0.1.0",
-  "description": "Generate QR links for Tailscale-hosted developer tools",
+  "description": "Generate QR links for onboarding devices to self-hosted Tailscale tools",
   "license": "MIT",
   "author": "Justin Scroggins",
   "type": "module",
@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/itz4blitz/OpenTailQR#readme",
   "bin": {
-    "opentailqr": "src/cli.mjs",
-    "opencode-qr": "src/cli.mjs"
+    "opentailqr": "src/cli.mjs"
   },
   "scripts": {
     "start": "node src/cli.mjs"
